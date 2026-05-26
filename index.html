@@ -473,23 +473,42 @@ footer ul a:hover{color:var(--blue-light)}
   .nh-layout{grid-template-columns:1fr;gap:36px}
   .areas-layout{grid-template-columns:1fr;gap:32px}
   .fg-grid{grid-template-columns:1fr 1fr;gap:28px}
-  nav{padding:0 20px}
+  nav{padding:0 20px;height:auto;min-height:70px;flex-wrap:wrap;gap:12px;padding-top:12px;padding-bottom:12px}
+  .logo img{height:70px}
+  .logo-name{font-size:22px}
+  .logo-tag{font-size:11px}
   .navlinks{display:none}
+  .nav-cta{padding:8px 18px;font-size:12.5px}
   section{padding:64px 24px}
-  .topbar{padding:8px 20px}
+  .topbar{padding:8px 20px;font-size:11px;text-align:center;justify-content:center}
+  .topbar-l{flex-direction:column;gap:6px;align-items:center}
   .calc-grid{grid-template-columns:1fr}
   .steps::after{display:none}
   .trust-band{padding:20px 24px;gap:18px}
+  .svc-grid{grid-template-columns:1fr}
+  .mat-grid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+  .why-grid{grid-template-columns:1fr}
+  .rev-grid{grid-template-columns:1fr}
 }
 @media(max-width:580px){
   .fg-grid{grid-template-columns:1fr;gap:20px}
   .areas-grid{grid-template-columns:1fr 1fr}
   .hero-btns{flex-direction:column}
+  .hero-btns a{width:100%;text-align:center;justify-content:center}
   .stat{padding:16px 20px}
   .frow{grid-template-columns:1fr}
   .calc-result-box{flex-direction:column;align-items:flex-start}
   .float-cta .float-label{display:none}
   .cta-banner{padding:56px 24px}
+  .logo img{height:60px}
+  .logo-name{font-size:18px}
+  .logo-tag{font-size:10px}
+  nav{padding:0 16px;padding-top:10px;padding-bottom:10px}
+  .topbar{font-size:10px;padding:6px 16px}
+  .tb-item{font-size:10px}
+  section{padding:48px 20px}
+  .sh{font-size:28px}
+  .hero{padding:40px 20px 36px}
 }
 </style>
 </head>
@@ -1056,21 +1075,21 @@ footer ul a:hover{color:var(--blue-light)}
     <div>
       <h4>Services</h4>
       <ul>
-        <li><a href="/custom-screened-porch-build">Custom Screened Porch Build</a></li>
-        <li><a href="/patio-enclosures">Patio Enclosures</a></li>
-        <li><a href="/new-construction-porches">New Construction Add-Ons</a></li>
-        <li><a href="/screen-porch-repair">Porch Repair</a></li>
-        <li><a href="/re-screening">Re-Screening Service</a></li>
+        <li><a href="#services">Custom Screened Porch Build</a></li>
+        <li><a href="#services">Patio Enclosures</a></li>
+        <li><a href="#new-homes">New Construction Add-Ons</a></li>
+        <li><a href="#services">Porch Repair</a></li>
+        <li><a href="#services">Re-Screening Service</a></li>
       </ul>
     </div>
     <div>
       <h4>Service Areas</h4>
       <ul>
-        <li><a href="/screened-porch-simpsonville-sc">Simpsonville, SC</a></li>
-        <li><a href="/screened-porch-fountain-inn-sc">Fountain Inn, SC</a></li>
-        <li><a href="/screened-porch-gray-court-sc">Gray Court, SC</a></li>
-        <li><a href="/screened-porch-laurens-sc">Laurens, SC</a></li>
-        <li><a href="/areas">All Service Areas →</a></li>
+        <li><a href="#areas">Simpsonville, SC</a></li>
+        <li><a href="#areas">Fountain Inn, SC</a></li>
+        <li><a href="#areas">Gray Court, SC</a></li>
+        <li><a href="#areas">Laurens, SC</a></li>
+        <li><a href="#areas">All Service Areas →</a></li>
       </ul>
     </div>
     <div>
@@ -1092,8 +1111,8 @@ footer ul a:hover{color:var(--blue-light)}
   <div class="foot-bottom">
     <span>© 2026 Burch Contracting | ScreenPorchBuilder.com · 1095 Water Tank Rd, Gray Court SC 29645 · SC License #CLG118679</span>
     <span>
-      <a href="/privacy-policy">Privacy Policy</a>
-      <a href="/sitemap.xml">Sitemap</a>
+      <a href="#contact">Contact</a>
+      <a href="#faq">FAQ</a>
     </span>
   </div>
 </footer>
