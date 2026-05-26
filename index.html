@@ -23,6 +23,10 @@
 <meta name="twitter:title" content="Screened Porch Builder | Simpsonville, Fountain Inn, Gray Court SC">
 <meta name="twitter:description" content="Upstate SC's screened porch specialists. Design, build & repair. Free estimates. SC Licensed #CLG118679.">
 
+<link rel="icon" type="image/webp" href="/favicon.webp">
+<link rel="shortcut icon" type="image/webp" href="/favicon.webp">
+<link rel="apple-touch-icon" href="/favicon.webp">
+
 <script type="application/ld+json">
 {
   "@context":"https://schema.org","@type":"HomeAndConstructionBusiness",
@@ -116,8 +120,10 @@ nav{background:var(--white);border-bottom:2px solid var(--cream3);padding:0 40px
   position:sticky;top:0;z-index:90;height:70px;
   box-shadow:0 2px 20px rgba(28,58,14,.08)}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo-mark{width:42px;height:42px;background:var(--dark-base);border-radius:var(--r);
-  display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.logo-mark{width:42px;height:42px;background:var(--white);border-radius:var(--r);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;
+  padding:4px}
+.logo-mark img{width:100%;height:100%;object-fit:contain}
 .logo-words{line-height:1.1}
 .logo-name{font-family:var(--ff-head);font-size:17px;font-weight:700;color:var(--dark-base);display:block;letter-spacing:-.01em}
 .logo-tag{font-size:10px;color:var(--text-dim);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
@@ -428,8 +434,10 @@ section{padding:90px 40px}
 footer{background:#0d0d0d;padding:60px 40px 32px}
 .fg-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2.2fr 1fr 1fr 1.2fr;gap:48px;margin-bottom:48px}
 .foot-logo{font-family:var(--ff-head);font-size:19px;font-weight:700;color:var(--cream);
-  margin-bottom:10px;display:flex;align-items:center;gap:8px}
-.foot-leaf{font-size:18px}
+  margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.foot-leaf{font-size:18px;width:32px;height:32px;background:var(--white);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;padding:4px}
+.foot-leaf img{width:100%;height:100%;object-fit:contain}
 .foot-brand p{font-size:13px;color:rgba(245,245,244,.40);line-height:1.7;max-width:280px;margin-bottom:14px}
 .foot-badge{display:inline-flex;gap:6px;background:rgba(255,255,255,.07);
   border:1px solid rgba(255,255,255,.12);color:rgba(245,245,244,.55);
@@ -510,7 +518,7 @@ footer ul a:hover{color:var(--sage)}
 <!-- NAV -->
 <nav aria-label="Main navigation">
   <a class="logo" href="/" aria-label="Screen Porch Builder Home">
-    <div class="logo-mark" aria-hidden="true">🌿</div>
+    <div class="logo-mark" aria-hidden="true"><img src="/logo.webp" alt="Burch Contracting Logo"></div>
     <div class="logo-words">
       <span class="logo-name">ScreenPorchBuilder.com</span>
       <span class="logo-tag">Upstate SC · Design · Build · Repair</span>
@@ -1047,7 +1055,7 @@ footer ul a:hover{color:var(--sage)}
 <footer>
   <div class="fg-grid">
     <div class="foot-brand">
-      <div class="foot-logo"><span class="foot-leaf">🌿</span>ScreenPorchBuilder.com</div>
+      <div class="foot-logo"><span class="foot-leaf"><img src="/logo.webp" alt="Logo"></span>ScreenPorchBuilder.com</div>
       <p>Custom screened porches, patio enclosures, and porch repairs across Simpsonville, Fountain Inn, Gray Court, Laurens, and Upstate SC. SC Licensed General Contractor since 1995.</p>
       <div class="foot-badge">📍 Based in Gray Court, SC 29645</div>
     </div>
