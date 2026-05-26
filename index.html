@@ -116,11 +116,8 @@ nav{background:var(--white);border-bottom:1px solid var(--gray-200);padding:0 40
   display:flex;align-items:center;justify-content:space-between;
   position:sticky;top:0;z-index:90;height:70px;
   box-shadow:0 2px 12px rgba(0,0,0,.05)}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo-mark{width:84px;height:84px;background:var(--white);border-radius:var(--r);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;
-  padding:8px}
-.logo-mark img{width:100%;height:100%;object-fit:contain}
+.logo{display:flex;align-items:center;gap:16px;text-decoration:none}
+.logo img{height:120px;width:auto;display:block}
 .logo-words{line-height:1.1}
 .logo-name{font-family:var(--ff-head);font-size:34px;font-weight:700;color:var(--navy);display:block;letter-spacing:-.01em}
 .logo-tag{font-size:20px;color:var(--gray-600);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
@@ -515,7 +512,7 @@ footer ul a:hover{color:var(--blue-light)}
 <!-- NAV -->
 <nav aria-label="Main navigation">
   <a class="logo" href="/" aria-label="Screen Porch Builder Home">
-    <div class="logo-mark" aria-hidden="true"><img src="/logo-full.webp" alt="Burch Contracting Logo"></div>
+    <img src="/logo-full.webp" alt="Burch Contracting Logo">
     <div class="logo-words">
       <span class="logo-name">ScreenPorchBuilder.com</span>
       <span class="logo-tag">Upstate SC · Design · Build · Repair</span>
@@ -1116,8 +1113,8 @@ function calcCost(){
   const screenMult= parseFloat(document.getElementById('c-screen').value);
   const extras    = parseFloat(document.getElementById('c-extras').value)||0;
   const sqft = w * d;
-  // Base rate: $58/sqft for aluminum + standard screen + shed roof at 224 sqft
-  const baseRate = 58;
+  // Base rate: $65/sqft for aluminum + standard screen + shed roof (May 2026 pricing)
+  const baseRate = 65;
   const baseCost = sqft * baseRate * roofMult * frameMult * screenMult + extras;
   const low  = Math.round(baseCost * 0.88 / 100) * 100;
   const high = Math.round(baseCost * 1.18 / 100) * 100;
