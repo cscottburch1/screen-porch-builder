@@ -385,6 +385,26 @@ section{padding:90px 40px}
 .faq-item.open .faq-a{max-height:260px;padding:0 22px 18px}
 .faq-item.open .faq-tog{transform:rotate(45deg);background:var(--dark-base);color:var(--text-primary);border-color:var(--dark-base)}
 
+/* ─── CONTACT FORM SECTION ─── */
+.contact-section{background:var(--dark-base);padding:90px 40px}
+.contact-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start}
+.contact-info .ss{max-width:none;margin-bottom:32px}
+.contact-benefits{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px}
+.cb-item{font-size:14px;color:var(--text-primary);font-weight:500;display:flex;align-items:center;gap:8px}
+.cb-item::before{content:'';width:6px;height:6px;background:var(--orange);border-radius:50%;flex-shrink:0}
+.contact-direct{display:flex;flex-direction:column;gap:14px}
+.contact-phone,.contact-email{font-size:18px;font-weight:700;color:var(--orange-lt);
+  text-decoration:none;transition:color .15s;display:inline-block}
+.contact-phone:hover,.contact-email:hover{color:var(--text-primary)}
+.contact-form-wrap{background:var(--white);border:1.5px solid var(--cream3);border-radius:var(--rxl);padding:32px 28px}
+.contact-form-wrap .form-chip{margin-bottom:18px}
+.contact-form .fg{margin-bottom:14px}
+.contact-form textarea{min-height:100px}
+@media(max-width:900px){
+  .contact-layout{grid-template-columns:1fr;gap:40px}
+  .contact-benefits{grid-template-columns:1fr}
+}
+
 /* ─── CTA BANNER ─── */
 .cta-banner{background:linear-gradient(130deg,var(--dark-base) 0%,var(--dark-mid) 100%);
   padding:80px 40px;text-align:center;overflow:hidden}
@@ -539,8 +559,15 @@ footer ul a:hover{color:var(--sage)}
       <div class="form-chip">🌿 Free · No Obligation · No Spam</div>
       <h2>Get Your Free Porch Quote</h2>
       <p class="fsub">Response within one business day — usually same day</p>
-      <form onsubmit="handleSubmit(event)" novalidate>
+      <form action="https://api.web3forms.com/submit" method="POST" onsubmit="return handleSubmit(event, this)" novalidate>
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY_HERE">
+        <input type="hidden" name="subject" value="New Screened Porch Estimate Request">
+        <input type="hidden" name="from_name" value="ScreenPorchBuilder.com">
+        <input type="hidden" name="redirect" value="https://screenporchbuilder.com/?submitted=true">
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+        <input type="hidden" name="form_timestamp" id="form_timestamp_hero" value="">
         <div class="fg"><label>Your Name</label><input type="text" name="name" placeholder="First &amp; last name" required autocomplete="name"></div>
+        <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="you@example.com" required autocomplete="email"></div>
         <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="(864) 555-0000" required autocomplete="tel"></div>
         <div class="frow">
           <div class="fg"><label>City / ZIP</label><input type="text" name="city" placeholder="Gray Court 29645"></div>
@@ -596,7 +623,8 @@ footer ul a:hover{color:var(--sage)}
           <li>Ceiling fans, lighting, and TV rough-in available</li>
           <li>Concrete pad poured or matched to existing</li>
         </ul>
-        <a class="svc-link" href="tel:+18647244600">Get a build estimate →</a>
+        <a class="svc-link" href="tel:+18647244600">📞 Call for estimate</a>
+        <a class="svc-link" href="#contact" style="margin-left:12px">✉️ Request quote</a>
       </div>
       <div class="svc-card">
         <span class="svc-emoji">🪟</span>
@@ -610,7 +638,8 @@ footer ul a:hover{color:var(--sage)}
           <li>HOA-compliant designs for all local communities</li>
           <li>Most projects complete in 2–4 days</li>
         </ul>
-        <a class="svc-link" href="tel:+18647244600">Enclose your patio →</a>
+        <a class="svc-link" href="tel:+18647244600">📞 Call for estimate</a>
+        <a class="svc-link" href="#contact" style="margin-left:12px">✉️ Request quote</a>
       </div>
       <div class="svc-card">
         <span class="svc-emoji">🔧</span>
@@ -624,7 +653,8 @@ footer ul a:hover{color:var(--sage)}
           <li>Screen door repairs &amp; replacement</li>
           <li>Same-week service for most repair calls</li>
         </ul>
-        <a class="svc-link" href="tel:+18647244600">Schedule a repair →</a>
+        <a class="svc-link" href="tel:+18647244600">📞 Call for repair</a>
+        <a class="svc-link" href="#contact" style="margin-left:12px">✉️ Request quote</a>
       </div>
     </div>
   </div>
@@ -696,7 +726,8 @@ footer ul a:hover{color:var(--sage)}
       </div>
       <p class="calc-disclaimer">* Estimates are planning ranges based on current Upstate SC market rates. Final pricing depends on site conditions, access, and material availability. Always get a free written on-site estimate before budgeting.</p>
       <div class="calc-cta-row">
-        <a class="btn-green" href="tel:+18647244600">📞 Get My Free On-Site Estimate</a>
+        <a class="btn-green" href="tel:+18647244600">📞 Call for Estimate</a>
+        <a class="btn-green" href="#contact">✉️ Request Quote Online</a>
         <span class="calc-note">We'll confirm exact pricing after visiting your home.</span>
       </div>
     </div>
@@ -941,6 +972,66 @@ footer ul a:hover{color:var(--sage)}
   </div>
 </section>
 
+<!-- CONTACT FORM SECTION -->
+<section class="contact-section" id="contact" aria-labelledby="contact-h">
+  <div class="si">
+    <div class="contact-layout">
+      <div class="contact-info">
+        <div class="eyebrow">💬 Get In Touch</div>
+        <h2 class="sh" id="contact-h">Ready to Start Your <em>Screen Porch Project?</em></h2>
+        <p class="ss">Fill out the form and we'll respond within one business day — usually same day. Or call us now at (864) 724-4600.</p>
+        <div class="contact-benefits">
+          <div class="cb-item">✓ Free on-site consultation</div>
+          <div class="cb-item">✓ Written detailed estimate</div>
+          <div class="cb-item">✓ No obligation · No pressure</div>
+          <div class="cb-item">✓ SC Licensed #CLG118679</div>
+          <div class="cb-item">✓ Fully insured contractor</div>
+          <div class="cb-item">✓ 35+ years in business</div>
+        </div>
+        <div class="contact-direct">
+          <a href="tel:+18647244600" class="contact-phone">📞 (864) 724-4600</a>
+          <a href="mailto:estimates@burchcontracting.com" class="contact-email">✉️ estimates@burchcontracting.com</a>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <div class="form-chip">🔒 Spam Protected · Private</div>
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" onsubmit="return handleSubmit(event, this)" novalidate>
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY_HERE">
+          <input type="hidden" name="subject" value="New Screened Porch Contact Form">
+          <input type="hidden" name="from_name" value="ScreenPorchBuilder.com Contact">
+          <input type="hidden" name="redirect" value="https://screenporchbuilder.com/?submitted=true">
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+          <input type="hidden" name="form_timestamp" id="form_timestamp_contact" value="">
+          
+          <div class="fg"><label>Your Name *</label><input type="text" name="name" placeholder="First &amp; last name" required autocomplete="name"></div>
+          <div class="fg"><label>Email Address *</label><input type="email" name="email" placeholder="you@example.com" required autocomplete="email"></div>
+          <div class="fg"><label>Phone Number *</label><input type="tel" name="phone" placeholder="(864) 555-0000" required autocomplete="tel"></div>
+          <div class="frow">
+            <div class="fg"><label>City</label><input type="text" name="city" placeholder="Gray Court, SC" autocomplete="address-level2"></div>
+            <div class="fg"><label>ZIP Code</label><input type="text" name="zip" placeholder="29645" autocomplete="postal-code"></div>
+          </div>
+          <div class="fg">
+            <label>Project Type *</label>
+            <select name="project" required>
+              <option value="" disabled selected>What do you need?</option>
+              <option>New screened porch — full build</option>
+              <option>Enclose existing patio / concrete slab</option>
+              <option>Add porch to new construction home</option>
+              <option>Screen porch repair</option>
+              <option>Re-screening / screen replacement</option>
+              <option>Not sure — want advice</option>
+            </select>
+          </div>
+          <div class="fg"><label>Project Details</label>
+            <textarea name="message" rows="4" placeholder="Tell us about your project: approximate size, existing patio, roof style ideas, timeline, etc."></textarea></div>
+          <button type="submit" class="fbtn">Send Estimate Request →</button>
+          <p class="ffine">🔒 Your information is private and will never be shared. No spam — ever.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA BANNER -->
 <section class="cta-banner" aria-labelledby="cta-h">
   <h2 id="cta-h">Stop Swatting Bugs.<br><em>Start Living Outside.</em></h2>
@@ -948,7 +1039,7 @@ footer ul a:hover{color:var(--sage)}
   <a class="cta-phone" href="tel:+18647244600">(864) 724-4600</a>
   <div class="cta-acts">
     <a class="btn-cream-solid" href="tel:+18647244600">📞 Call for Free Estimate</a>
-    <a class="btn-ghost" href="mailto:estimates@burchcontracting.com">✉️ Email Us</a>
+    <a class="btn-ghost" href="#contact">✉️ Request Quote Online</a>
   </div>
 </section>
 
@@ -1037,13 +1128,104 @@ function calcCost(){
 }
 calcCost();
 
-// ── FORM ──
-function handleSubmit(e){
+// ── FORM SPAM PROTECTION & SUBMISSION ──
+// Set form timestamp when page loads (prevents instant bot submissions)
+window.addEventListener('DOMContentLoaded', function() {
+  const timestamp = Date.now();
+  const heroTimestamp = document.getElementById('form_timestamp_hero');
+  const contactTimestamp = document.getElementById('form_timestamp_contact');
+  if(heroTimestamp) heroTimestamp.value = timestamp;
+  if(contactTimestamp) contactTimestamp.value = timestamp;
+});
+
+function handleSubmit(e, form){
   e.preventDefault();
-  const btn=e.target.querySelector('.fbtn');
-  btn.textContent='✅ Sent! We\'ll be in touch soon.';
-  btn.style.background='var(--dark-mid)';
-  btn.disabled=true;
+  
+  // Spam protection checks
+  const botcheck = form.querySelector('input[name="botcheck"]');
+  if(botcheck && botcheck.checked){
+    // Honeypot triggered - likely a bot
+    return false;
+  }
+  
+  // Time-based validation (prevent instant submissions)
+  const timestampField = form.querySelector('input[name="form_timestamp"]');
+  if(timestampField){
+    const submitTime = Date.now();
+    const formLoadTime = parseInt(timestampField.value);
+    const elapsedSeconds = (submitTime - formLoadTime) / 1000;
+    if(elapsedSeconds < 3){
+      alert('Please take a moment to review your information before submitting.');
+      return false;
+    }
+  }
+  
+  // Basic validation
+  const requiredFields = form.querySelectorAll('[required]');
+  let isValid = true;
+  requiredFields.forEach(field => {
+    if(!field.value.trim()){
+      isValid = false;
+      field.style.borderColor = '#ef4444';
+    } else {
+      field.style.borderColor = '';
+    }
+  });
+  
+  if(!isValid){
+    alert('Please fill in all required fields.');
+    return false;
+  }
+  
+  // Email validation
+  const emailField = form.querySelector('input[type="email"]');
+  if(emailField && emailField.value){
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(!emailRegex.test(emailField.value)){
+      alert('Please enter a valid email address.');
+      emailField.style.borderColor = '#ef4444';
+      return false;
+    }
+  }
+  
+  // If validation passes, submit the form
+  const btn = form.querySelector('.fbtn');
+  const originalText = btn.textContent;
+  btn.textContent = '📤 Sending...';
+  btn.disabled = true;
+  
+  // Submit form data via fetch
+  const formData = new FormData(form);
+  
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(data => {
+    if(data.success){
+      btn.textContent = '✅ Sent! We\'ll be in touch soon.';
+      btn.style.background = 'var(--green-accent)';
+      form.reset();
+      // Scroll to top or show success message
+      if(window.location.search.includes('submitted=true')){
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      }
+    } else {
+      throw new Error('Form submission failed');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    btn.textContent = '❌ Error - Please call us';
+    btn.disabled = false;
+    alert('There was an error submitting the form. Please call us at (864) 724-4600 or email estimates@burchcontracting.com');
+  });
+  
+  return false;
 }
 
 // ── FAQ ──
