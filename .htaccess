@@ -1,5 +1,14 @@
+# Canonical host: force HTTPS + www in one hop
+# This runs before all other rules; LiteSpeed honors Apache RewriteRule syntax
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} !^www\. [NC,OR]
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://www.screenporchbuilder.com%{REQUEST_URI} [R=301,L]
+</IfModule>
+
 # Security Headers — Burch Contracting / ScreenPorchBuilder.com
-# Hostinger shared hosting (Apache)
+# Hostinger shared hosting (LiteSpeed/Apache)
 
 <IfModule mod_headers.c>
   # Force HTTPS for 1 year; include subdomains

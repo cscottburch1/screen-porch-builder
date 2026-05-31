@@ -43,3 +43,8 @@ User-agent: FacebookBot
 Allow: /
 
 Sitemap: https://www.screenporchbuilder.com/sitemap.xml
+
+# AI content discovery
+# Full site content in markdown format for LLM ingestion
+# See: https://llmstxt.org/
+LLMs-txt: https://www.screenporchbuilder.com/llms.txt
