@@ -12,15 +12,22 @@
 
 ## Cost Estimator
 
-- [Screened Porch Cost Calculator](https://www.screenporchbuilder.com/#calculator): Interactive tool providing realistic project ranges based on current Upstate SC material and labor rates (updated May 2026). Cost ranges from approximately $8,000–$12,000 for a basic aluminum-framed patio enclosure to $25,000–$40,000+ for a full custom wood-framed porch with gable roof, ceiling fan, and EZ Breeze windows. Base rate: $65/sq ft for aluminum framing + standard screen + shed roof.
+- [Screened Porch Cost Calculator](https://www.screenporchbuilder.com/#calculator): Interactive tool providing realistic project ranges based on current Upstate SC material and labor rates (updated June 2026). Cost ranges from approximately $8,000–$12,000 for a basic aluminum-framed patio enclosure to $25,000–$40,000+ for a full custom wood-framed porch with gable roof, ceiling fan, and EZ Breeze windows. Base rate: $65/sq ft for aluminum framing + standard screen + shed roof.
 
 ## Service Areas
 
-- [Simpsonville, SC](https://www.screenporchbuilder.com/#areas): Primary service area — Greenville County
-- [Fountain Inn, SC](https://www.screenporchbuilder.com/#areas): Primary service area — Greenville/Laurens County line
-- [Gray Court, SC](https://www.screenporchbuilder.com/#areas): Company headquarters — 1095 Water Tank Rd, Gray Court, SC 29645
-- [Laurens, SC](https://www.screenporchbuilder.com/#areas): Primary service area — Laurens County
-- [All Upstate SC Service Areas](https://www.screenporchbuilder.com/#areas): Also serving Mauldin, Greenville, Five Forks, Greer, Woodruff, Clinton, Joanna, and the entire I-385 corridor
+- [All Service Areas](https://www.screenporchbuilder.com/areas): Complete hub page listing all 11 Upstate SC cities served, grouped by county
+- [Simpsonville, SC](https://www.screenporchbuilder.com/screened-porch-simpsonville-sc): Primary service area — Greenville County
+- [Fountain Inn, SC](https://www.screenporchbuilder.com/screened-porch-fountain-inn-sc): Primary service area — Greenville/Laurens County line
+- [Gray Court, SC](https://www.screenporchbuilder.com/screened-porch-gray-court-sc): Company headquarters — 1095 Water Tank Rd, Gray Court, SC 29645
+- [Laurens, SC](https://www.screenporchbuilder.com/screened-porch-laurens-sc): Primary service area — Laurens County
+- [Mauldin, SC](https://www.screenporchbuilder.com/screened-porch-mauldin-sc): Service area — Greenville County
+- [Greenville, SC](https://www.screenporchbuilder.com/screened-porch-greenville-sc): Service area — Greenville County
+- [Five Forks, SC](https://www.screenporchbuilder.com/screened-porch-five-forks-sc): Service area — Greenville County
+- [Greer, SC](https://www.screenporchbuilder.com/screened-porch-greer-sc): Service area — Greenville/Spartanburg County
+- [Woodruff, SC](https://www.screenporchbuilder.com/screened-porch-woodruff-sc): Service area — Spartanburg County
+- [Clinton, SC](https://www.screenporchbuilder.com/screened-porch-clinton-sc): Service area — Laurens County
+- [Joanna, SC](https://www.screenporchbuilder.com/screened-porch-joanna-sc): Service area — Laurens County
 
 ## Contact & Free Estimates
 
@@ -41,7 +48,11 @@
 
 ## FAQ
 
-- [How much does a screened porch cost in Simpsonville SC in 2026?](https://www.screenporchbuilder.com/#faq): $8,000–$12,000 for basic patio enclosure; $25,000–$40,000+ for full custom porch. Greenville County average was $28,400 for a 240 sq ft project (2025 permit data).
+- [How much does a screened porch cost in Simpsonville SC in 2026?](https://www.screenporchbuilder.com/screened-porch-simpsonville-sc): $8,500–$13,000 for basic patio enclosure; $26,000–$42,000+ for full custom porch.
 - [Do screened porches require a permit in Greenville or Laurens County SC?](https://www.screenporchbuilder.com/#faq): Yes. Permit approval takes 7–14 business days. We handle all permit filings at no extra charge.
 - [What screen type is best for properties near ponds or woods?](https://www.screenporchbuilder.com/#faq): No-See-Um screen (20×20 mesh). Standard fiberglass lets no-see-um gnats pass through. Upgrade adds $150–$300.
 - [How long does it take to build a screened porch?](https://www.screenporchbuilder.com/#faq): 3–7 business days after permit approval (7–14 days). Patio enclosures often 2–3 days.
+- [Do you build in Durbin Meadow, Fountain Inn?](https://www.screenporchbuilder.com/screened-porch-fountain-inn-sc): Yes — D.R. Horton homes with back patios, HOA-compliant designs.
+- [Do you build at Farm at Wells Creek, Gray Court?](https://www.screenporchbuilder.com/screened-porch-gray-court-sc): Yes — 5 minutes from the community, know the Meritage floor plans and HOA rules.
+- [What does re-screening cost in Laurens SC?](https://www.screenporchbuilder.com/screened-porch-laurens-sc): $400–$800 for standard fiberglass re-screening of a 200 sq ft porch.
+- [How much does a screened porch cost in Mauldin SC?](https://www.screenporchbuilder.com/screened-porch-mauldin-sc): $11,000–$19,000 for aluminum enclosure on existing slab; $20,000–$38,000+ for custom builds.

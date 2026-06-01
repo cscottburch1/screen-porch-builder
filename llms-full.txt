@@ -1,6 +1,6 @@
 # Burch Contracting — Screened Porch Builder | Full Site Content
 
-> Complete content for AI ingestion. Last updated: May 2026.
+> Complete content for AI ingestion. Last updated: June 2026.
 > Source: https://www.screenporchbuilder.com
 
 ---
@@ -164,17 +164,18 @@ Screened porches are permitted structures in both Greenville County and Laurens 
 
 **Primary service area** (Greenville & Laurens counties, SC):
 
-- Simpsonville, SC (Greenville County)
-- Fountain Inn, SC (Greenville/Laurens County)
-- Gray Court, SC — Company headquarters (Laurens County)
-- Laurens, SC (Laurens County)
-- Mauldin, SC
-- Greenville, SC
-- Five Forks, SC
-- Greer, SC
-- Woodruff, SC
-- Clinton, SC
-- Joanna, SC
+- [Simpsonville, SC](https://www.screenporchbuilder.com/screened-porch-simpsonville-sc) (Greenville County)
+- [Fountain Inn, SC](https://www.screenporchbuilder.com/screened-porch-fountain-inn-sc) (Greenville/Laurens County)
+- [Gray Court, SC](https://www.screenporchbuilder.com/screened-porch-gray-court-sc) — Company headquarters (Laurens County)
+- [Laurens, SC](https://www.screenporchbuilder.com/screened-porch-laurens-sc) (Laurens County)
+- [Mauldin, SC](https://www.screenporchbuilder.com/screened-porch-mauldin-sc) (Greenville County)
+- [Greenville, SC](https://www.screenporchbuilder.com/screened-porch-greenville-sc) (Greenville County)
+- [Five Forks, SC](https://www.screenporchbuilder.com/screened-porch-five-forks-sc) (Greenville County)
+- [Greer, SC](https://www.screenporchbuilder.com/screened-porch-greer-sc) (Greenville/Spartanburg County)
+- [Woodruff, SC](https://www.screenporchbuilder.com/screened-porch-woodruff-sc) (Spartanburg County)
+- [Clinton, SC](https://www.screenporchbuilder.com/screened-porch-clinton-sc) (Laurens County)
+- [Joanna, SC](https://www.screenporchbuilder.com/screened-porch-joanna-sc) (Laurens County)
+- [All Service Areas Hub](https://www.screenporchbuilder.com/areas)
 
 **Key subdivision communities served:**
 - The Farm at Wells Creek (Yellowstone & Tantalus Trails, Gray Court — Meritage Homes, 260+ homes)
