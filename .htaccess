@@ -27,10 +27,15 @@ ErrorDocument 404 /404.html
 
   # Rule 4 — Serve extensionless URLs: internally map /slug → /slug.html when
   #           the .html file exists and the path is not already a real file/dir.
+  #
+  #           LiteSpeed fix: use %{DOCUMENT_ROOT}%{REQUEST_URI} instead of
+  #           %{REQUEST_FILENAME} for the .html existence test. LiteSpeed does
+  #           not always populate REQUEST_FILENAME before condition evaluation,
+  #           causing the old form to silently fail on clean-URL requests.
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME}.html -f
-  RewriteRule ^(.+)$ $1.html [L]
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}.html -f
+  RewriteRule ^(.+)$ /$1.html [L]
 
 </IfModule>
 
