@@ -1,14 +1,40 @@
-# Canonical host: force HTTPS + www in one hop
-# This runs before all other rules; LiteSpeed honors Apache RewriteRule syntax
+# ── screenporchbuilder.com — LiteSpeed/Apache ────────────────────────────────
+
+Options -Indexes
+ErrorDocument 404 /404.html
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteCond %{HTTP_HOST} !^www\. [NC,OR]
-  RewriteCond %{HTTPS} off
+  RewriteBase /
+
+  # Rule 1 — /index.html → canonical root; must precede Rule 2 so the request
+  #           doesn't land on the non-existent /index slug.
+  RewriteRule ^index\.html$ https://www.screenporchbuilder.com/ [R=301,L]
+
+  # Rule 2 — Strip .html and normalise to https://www in a single 301.
+  #           Reads THE_REQUEST (raw browser line) so internal rewrites are
+  #           immune. Doing both fixes here avoids the two-hop chain that would
+  #           occur if .html-stripping and protocol/host fixing were separate rules.
+  RewriteCond %{THE_REQUEST} \s/([^?#\s]+)\.html [NC]
+  RewriteRule ^ https://www.screenporchbuilder.com/%1 [R=301,L]
+
+  # Rule 3 — Force https://www for everything not caught by Rule 2.
+  #           [OR] means the single RewriteRule fires when EITHER condition is
+  #           true, so HTTP+non-www lands on https://www in one hop, not two.
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} !^www\. [NC]
   RewriteRule ^ https://www.screenporchbuilder.com%{REQUEST_URI} [R=301,L]
+
+  # Rule 4 — Serve extensionless URLs: internally map /slug → /slug.html when
+  #           the .html file exists and the path is not already a real file/dir.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+)$ $1.html [L]
+
 </IfModule>
 
-# Security Headers — Burch Contracting / ScreenPorchBuilder.com
-# Hostinger shared hosting (LiteSpeed/Apache)
+# ── Security Headers ──────────────────────────────────────────────────────────
 
 <IfModule mod_headers.c>
   # Force HTTPS for 1 year; include subdomains
@@ -27,26 +53,27 @@
   Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
 
   # Content Security Policy
-  # Allows: self, Google Fonts, Web3Forms API, Google Analytics (if added later)
   Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.web3forms.com; frame-ancestors 'none';"
 
-  # Remove server signature header
+  # Remove server signature headers
   Header always unset X-Powered-By
   Header always unset Server
 </IfModule>
 
-# Enable gzip compression
+# ── Compression ───────────────────────────────────────────────────────────────
+
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json text/plain
 </IfModule>
 
-# Cache static assets
+# ── Cache static assets ───────────────────────────────────────────────────────
+
 <IfModule mod_expires.c>
   ExpiresActive On
-  ExpiresByType image/webp "access plus 1 year"
-  ExpiresByType image/png "access plus 1 year"
-  ExpiresByType image/jpeg "access plus 1 year"
-  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType image/webp          "access plus 1 year"
+  ExpiresByType image/png           "access plus 1 year"
+  ExpiresByType image/jpeg          "access plus 1 year"
+  ExpiresByType text/css            "access plus 1 month"
   ExpiresByType application/javascript "access plus 1 month"
-  ExpiresByType text/html "access plus 1 hour"
+  ExpiresByType text/html           "access plus 1 hour"
 </IfModule>
