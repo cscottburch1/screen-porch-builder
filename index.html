@@ -461,10 +461,8 @@ section{padding:90px 40px}
 .sub-note strong{color:var(--navy);font-weight:700}
 .sub-note a{color:var(--blue);font-weight:700;text-decoration:none}
 .sub-note a:hover{text-decoration:underline}
-.map-holder{background:var(--white);border:1.5px solid var(--gray-200);border-radius:var(--rxl);
-  overflow:hidden;height:360px;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:10px;font-size:13px;color:var(--gray-600)}
-.map-holder span{font-size:44px}
+.map-holder{border:1.5px solid var(--gray-200);border-radius:var(--rxl);overflow:hidden;height:360px}
+.map-holder iframe{width:100%;height:100%;display:block;border:0}
 
 /* ─── TRUST BADGES ─── */
 .trust-band{background:var(--gray-50);border-top:1.5px solid var(--gray-200);border-bottom:1.5px solid var(--gray-200);
@@ -1264,13 +1262,15 @@ table.comp tbody tr:last-child td{border-bottom:none}
           <strong>🏘️ Farm at Wells Creek neighbors:</strong> We're based at 1095 Water Tank Rd, Gray Court — 5 minutes from Yellowstone Trail. We know the Meritage floor plans, the HOA rules, and how to get your porch permitted and built fast. <a href="tel:+18647244600">Call us now →</a>
         </div>
       </div>
-      <div class="map-holder" role="img" aria-label="Service area map — Gray Court, SC and I-385 corridor">
-        <span>🗺️</span>
-        <strong style="color:#2a2a2a">Gray Court &amp; I-385 Corridor</strong>
-        <p style="font-size:12.5px;text-align:center;max-width:220px;color:var(--text-dim)">
-          Paste your Google Maps iframe here<br>
-          centered on Gray Court, SC 29645
-        </p>
+      <div class="map-holder">
+        <iframe
+          src="https://maps.google.com/maps?q=1095+Water+Tank+Rd,+Gray+Court,+SC+29645&hl=en&z=10&output=embed"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Burch Contracting service area — Gray Court, SC"
+          aria-label="Map showing Burch Contracting service area centered on Gray Court, SC">
+        </iframe>
       </div>
     </div>
   </div>
