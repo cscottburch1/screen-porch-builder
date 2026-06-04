@@ -14,7 +14,24 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       
-      - name: Deploy to Hostinger via FTP
+      - name: Deploy to Hostinger via FTP (attempt 1)
+        id: deploy_attempt_1
+        continue-on-error: true
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.vscode/**
+            **/.idea/**
+
+      - name: Deploy to Hostinger via FTP (retry)
+        if: steps.deploy_attempt_1.outcome == 'failure'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
