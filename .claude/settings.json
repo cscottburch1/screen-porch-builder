@@ -4,7 +4,8 @@
       "PowerShell(cd \"e:\\\\All Websites\\\\screenporchbuilder.com\"; Get-ChildItem -File -Recurse | Where-Object {$_.Extension -in '.jpg', '.png', '.gif', '.svg', '.webp'} | Select-Object FullName | Head -20)",
       "PowerShell(cd \"e:\\\\All Websites\\\\screenporchbuilder.com\"; Get-ChildItem -File -Recurse | Where-Object {$_.Extension -in '.jpg', '.png', '.gif', '.svg', '.webp'} | Select-Object FullName | Select-Object -First 20)",
       "Bash(Select-String -Pattern \"section>|\\\\/main>|<footer\" \"e:\\\\All Websites\\\\screenporchbuilder.com\\\\screened-porch-mauldin-sc.html\")",
-      "Bash(Select-Object -Last 5)"
+      "Bash(Select-Object -Last 5)",
+      "Bash(gh run *)"
     ]
   }
 }
