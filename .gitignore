@@ -32,3 +32,6 @@ build/
 # Temporary files
 *.tmp
 *.temp
+
+# Claude Code local config & memory (never deploy to FTP)
+.claude/settings.local.json
