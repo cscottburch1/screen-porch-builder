@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -529,43 +529,88 @@ table.comp tbody tr:last-child td{border-bottom:none}
   .hero{padding:40px 20px 36px}
 }
 /* ═══ END VERBATIM COPY ═══ */
+
+/* nav-v2 */
+.topbar{background:var(--navy);color:rgba(255,255,255,.80);font-size:12px;font-weight:500;padding:6px 40px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:nowrap}
+.topbar a{color:rgba(255,255,255,.95);text-decoration:none;font-weight:600;transition:color .15s}
+.topbar a:hover{color:#fff}
+.topbar-l{display:flex;gap:16px;flex-wrap:nowrap}
+.tb-item{display:flex;align-items:center;gap:5px}
+.tb-item::before{content:'\2713';color:var(--blue-light);font-size:10px;font-weight:700}
+nav{background:#fff;border-bottom:1.5px solid #e5e7eb;padding:0 40px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:90;height:72px;box-shadow:0 2px 16px rgba(0,0,0,.07);flex-wrap:nowrap;min-height:0}
+.logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;gap:0}
+.logo img{height:54px;width:auto;display:block}
+.logo-words,.logo-name,.logo-tag{display:none}
+.navlinks{display:flex;gap:0;list-style:none}
+.navlinks a{color:#374151;text-decoration:none;font-size:13.5px;font-weight:500;padding:8px 13px;border-radius:10px;transition:color .15s,background .15s}
+.navlinks a:hover{color:#2c3e50;background:#e6f2ff}
+.nav-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav-cta{background:var(--blue);color:#fff;padding:10px 20px;border-radius:10px;font-weight:700;font-size:13.5px;text-decoration:none;transition:background .15s,transform .15s;white-space:nowrap;display:inline-flex;align-items:center;gap:7px}
+.nav-cta:hover{background:var(--blue-dark);transform:translateY(-1px)}
+.nav-hamburger{display:none;background:none;border:1.5px solid #e5e7eb;cursor:pointer;padding:7px;border-radius:10px;color:#2c3e50;transition:background .15s,border-color .15s}
+.nav-hamburger:hover{background:#f3f4f6;border-color:#d1d5db}
+.nav-hamburger svg{display:block}
+@media(max-width:980px){
+  nav{height:72px;padding:0 20px;min-height:0;flex-wrap:nowrap}
+  .navlinks{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;border-bottom:1.5px solid #e5e7eb;flex-direction:column;gap:0;box-shadow:0 8px 24px rgba(0,0,0,.10);padding:8px 0;z-index:100}
+  .navlinks a{padding:12px 24px;border-radius:0;font-size:15px}
+  .navlinks.open{display:flex}
+  .nav-hamburger{display:flex;align-items:center;justify-content:center}
+  .nav-cta{padding:9px 16px;font-size:13px}
+  .topbar-l{display:none}
+  .topbar{padding:6px 20px;justify-content:center}
+}
+@media(max-width:640px){
+  nav{height:72px;padding:0 20px;min-height:0}
+  .navlinks{top:72px}
+}
+@media(max-width:580px){
+  nav{padding:0 16px;height:64px}
+  .navlinks{top:64px}
+  .logo img{height:44px}
+  .topbar{padding:5px 16px;font-size:11px}
+}
 </style>
 </head>
 <body>
 
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
+<!-- TOP BAR -->
 <div class="topbar">
   <div class="topbar-l">
-    <div class="tb-item">📍 Based in Gray Court, SC 29645</div>
-    <div class="tb-item">🏘️ Farm at Wells Creek, Wren Woods &amp; all new subdivisions</div>
     <div class="tb-item">SC Lic. #CLG118679</div>
+    <div class="tb-item">BBB A+</div>
+    <div class="tb-item">5.0&#9733; Google</div>
+    <div class="tb-item">Est. 1995</div>
   </div>
-  <div>
-    <a href="tel:+18647244600">(864) 724-4600</a>
-    &nbsp;·&nbsp;
-    <a href="mailto:estimates@burchcontracting.com">Free Estimate</a>
-  </div>
+  <a href="tel:+18647244600">(864) 724-4600</a>
 </div>
 
+<!-- NAV -->
 <nav aria-label="Main navigation">
   <a class="logo" href="/" aria-label="Screen Porch Builder Home">
-    <img src="/logo-full.png" alt="Burch Contracting Logo" width="400" height="120" fetchpriority="high" srcset="/logo-full.png 400w" sizes="(max-width:580px) 200w, 400w">
-    <div class="logo-words">
-      <span class="logo-name">ScreenPorchBuilder.com</span>
-      <span class="logo-tag">Upstate SC · Design · Build · Repair</span>
-    </div>
+    <img src="/logo-full.png" alt="Burch Contracting" width="180" height="54" fetchpriority="high">
   </a>
-  <ul class="navlinks">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#calculator">Cost Calculator</a></li>
-    <li><a href="#new-homes">New Homes</a></li>
-    <li><a href="#reviews">Reviews</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact">Contact</a></li>
+  <ul class="navlinks" id="navlinks">
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#calculator">Calculator</a></li>
+    <li><a href="/#new-homes">New Homes</a></li>
+    <li><a href="/#reviews">Reviews</a></li>
+    <li><a href="/areas">Areas</a></li>
+    <li><a href="/#faq">FAQ</a></li>
+    <li><a href="/#contact">Contact</a></li>
     <li><a href="/book">Schedule</a></li>
   </ul>
-  <a class="nav-cta" href="tel:+18647244600"><span aria-hidden="true">📞</span> Free Estimate</a>
+  <div class="nav-actions">
+    <a class="nav-cta" href="tel:+18647244600">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      Free Estimate
+    </a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
 </nav>
 
 <main id="main-content">
@@ -1030,6 +1075,24 @@ window.addEventListener('DOMContentLoaded',function(){var t=Date.now(),h=documen
 function handleSubmit(e,form){e.preventDefault();var bc=form.querySelector('input[name="botcheck"]');if(bc&&bc.checked)return false;var tf=form.querySelector('input[name="form_timestamp"]');if(tf&&(Date.now()-parseInt(tf.value))/1000<3){alert('Please take a moment to review your information before submitting.');return false;}var req=form.querySelectorAll('[required]'),ok=true;req.forEach(function(f){if(!f.value.trim()){ok=false;f.style.borderColor='#ef4444';}else{f.style.borderColor='';}});if(!ok){alert('Please fill in all required fields.');return false;}var ef=form.querySelector('input[type="email"]');if(ef&&ef.value&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(ef.value)){alert('Please enter a valid email address.');ef.style.borderColor='#ef4444';return false;}var btn=form.querySelector('.fbtn');btn.textContent='📤 Sending...';btn.disabled=true;fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}}).then(function(r){return r.json();}).then(function(d){if(d.success){btn.textContent='✅ Sent! We\'ll be in touch soon.';btn.style.background='var(--green-accent)';form.reset();}else{throw new Error();}}).catch(function(){btn.textContent='❌ Error - Please call us';btn.disabled=false;alert('There was an error submitting the form. Please call us at (864) 724-4600 or email estimates@burchcontracting.com');});return false;}
 function toggleFaq(el){var item=el.parentElement,open=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false');});if(!open){item.classList.add('open');el.setAttribute('aria-expanded','true');}}
 document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleFaq(q);}});});
+(function(){
+  var btn=document.getElementById('nav-hamburger'),nl=document.getElementById('navlinks');
+  if(!btn||!nl)return;
+  var menuIcon='<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+  var closeIcon='<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+  btn.addEventListener('click',function(){
+    var open=nl.classList.toggle('open');
+    btn.setAttribute('aria-expanded',String(open));
+    btn.innerHTML=open?closeIcon:menuIcon;
+  });
+  nl.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nl.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      btn.innerHTML=menuIcon;
+    });
+  });
+})();
 </script>
 </body>
 </html>
