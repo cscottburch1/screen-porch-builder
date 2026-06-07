@@ -14,19 +14,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       
-      - name: Deploy to Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/.vscode/**
-            **/.idea/**
-            **/.claude/**
-            **/README.md
-            **/FORM_SETUP.md
+      - name: Install rsync and sshpass
+        run: sudo apt-get install -y rsync sshpass
+
+      - name: Deploy to Hostinger via SFTP
+        env:
+          SSHPASS: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          sshpass -e rsync -avz \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='node_modules' \
+            --exclude='.vscode' \
+            --exclude='.idea' \
+            --exclude='.claude' \
+            --exclude='README.md' \
+            --exclude='FORM_SETUP.md' \
+            -e "ssh -o StrictHostKeyChecking=no" \
+            ./ "${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:${{ secrets.FTP_SERVER_DIR }}"
